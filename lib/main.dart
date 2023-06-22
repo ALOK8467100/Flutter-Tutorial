@@ -26,34 +26,37 @@ class Homepage extends StatelessWidget {
       appBar: AppBar(
         title: const Text("Awesome App"),
       ),
-      body: Center(
-        child: Container(
+      body: Container(
+        height: 500,  // height and row will be changed according with Row and column 
+        // width:300,
+        color:Colors.teal,
+        child: Row( // in place of column we can put Row and see changes.
+          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+          crossAxisAlignment:CrossAxisAlignment.center,
+          children: <Widget>[
+            Container(
           padding: const EdgeInsets.all(8),
-          // color: Colors.red,
+          color: Colors.red,
           width: 100,
           height: 100,
-          clipBehavior: Clip.antiAlias, // it remove all extra text which lie outside shape
           alignment: Alignment.topLeft,
-          decoration: BoxDecoration(
-            color: Colors.red,
-            // shape: BoxShape.circle, // by shape we can design our container shaper.
-            borderRadius:BorderRadius.circular(10),
-            gradient: LinearGradient(colors:[ // by using gradient we can use many color at same time.
-              Colors.pink,
-              Colors.yellow,
-              Colors.black,
-              Colors.blue,
-            ]),
-            boxShadow: [
-              BoxShadow(
-                color: Colors.pinkAccent,
-                blurRadius: 20,
-              ),
-
-            ] 
           ),
-          child: Text("I am a Box"),
+          Container(
+          padding: const EdgeInsets.all(8),
+          color: Colors.yellow,
+          width: 100,
+          height: 100,
+          alignment: Alignment.topLeft,
           ),
+          Container(
+          padding: const EdgeInsets.all(8),
+          color: Colors.green,
+          width: 100,
+          height: 100,
+          alignment: Alignment.topLeft,
+          ),
+          ],
+        ),
       ), 
     );
   }
