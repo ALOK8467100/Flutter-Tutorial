@@ -1,7 +1,7 @@
-// ignore_for_file: unnecessary_import, avoid_unnecessary_containers, prefer_const_constructors
+// ignore_for_file: unnecessary_import, avoid_unnecessary_containers, prefer_const_constructors, prefer_const_literals_to_create_immutables
 
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
+// import 'package:flutter/widgets.dart';
 
 void main(){
   // WidgetsApp // MaterialAppp  // CupertinoApp
@@ -26,7 +26,35 @@ class Homepage extends StatelessWidget {
       appBar: AppBar(
         title: const Text("Awesome App"),
       ),
-      body: Container(child:Text("Hi Flutter")),
+      body: Center(
+        child: Container(
+          padding: const EdgeInsets.all(8),
+          // color: Colors.red,
+          width: 100,
+          height: 100,
+          clipBehavior: Clip.antiAlias, // it remove all extra text which lie outside shape
+          alignment: Alignment.topLeft,
+          decoration: BoxDecoration(
+            color: Colors.red,
+            // shape: BoxShape.circle, // by shape we can design our container shaper.
+            borderRadius:BorderRadius.circular(10),
+            gradient: LinearGradient(colors:[ // by using gradient we can use many color at same time.
+              Colors.pink,
+              Colors.yellow,
+              Colors.black,
+              Colors.blue,
+            ]),
+            boxShadow: [
+              BoxShadow(
+                color: Colors.pinkAccent,
+                blurRadius: 20,
+              ),
+
+            ] 
+          ),
+          child: Text("I am a Box"),
+          ),
+      ), 
     );
   }
 }
